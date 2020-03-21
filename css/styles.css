@@ -1,0 +1,148 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #111137;
+  overflow: hidden;
+}
+
+/* ----- */
+/* Snake */
+/* ----- */
+
+#head {
+  position: absolute;
+  z-index: 10;
+  transition: transform 0.2s linear;
+}
+
+.head-container {
+  transition: transform 0.1s 0.05s;
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+
+.mouth-open .snake-head {
+  transform: scaleY(0.6);
+}
+
+.snake-head {
+  width: 100%;
+  transition: transform 0.2s;
+  z-index: 20;
+  position: relative;
+  transform-origin: bottom center;
+}
+
+.snake-head__head{ fill:#20271C; }
+.snake-head__eye-right,
+.snake-head__eye-left{
+  fill:#FFFFFF;
+}
+
+.snake-mouth {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+}
+
+.snake-mouth__mouth-bottom{fill:#20271C;}
+	.snake-mouth__gums{fill:#B7081D;}
+	.snake-mouth__tooth-left,
+  .snake-mouth__tooth-right{fill:#FFFFFF;}
+
+.snake-node {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: transform 0.2s linear, opacity 0.2s;
+}
+
+.snake-node__svg {
+  width: 100%;
+  transform: rotate(180deg);
+  transition: transform 0.2s linear;
+}
+
+.snake-node__svg__body {
+  fill:#20271C;
+}
+
+/* ----- */
+/* Board */
+/* ----- */
+
+#board {
+  height: 700px;
+  width: 700px;
+  position: relative;
+  background: #b5d441;
+  background: linear-gradient(45deg, #3ba53b 0%,#b5d441 90%);
+  border-radius: 30px;
+  box-shadow: 0 25px #26540c;
+  border: 4px solid #b5d441;
+}
+
+/* ----- */
+/* Mouse */
+/* ----- */
+
+.mouse-wrapper {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+}
+
+.mouse-wrapper__container {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.mouse-wrapper__mouse {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  transition: transform 0.2s;
+}
+
+.mouse-wrapper--active  .mouse-wrapper__mouse {
+  transform: translateX(-50%) translateY(-50px);
+  transition: transform 0.4s 0.1s;
+}
+
+.mouse-wrapper__portal {
+  width: 48px;
+  height: 20px;
+  background: #20271C;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  border-radius: 100%;
+  transition: transform 0.1s 0.1s;
+}
+
+.mouse-wrapper--active .mouse-wrapper__portal {
+  transform: translateX(-50%) scale(1);
+  transition: transform 0.4s;
+}
