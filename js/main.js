@@ -79,7 +79,7 @@ class Game {
 
     const killSnake = gsap.timeline();
     killSnake.to([snakeHead, ...snakeNodes], {
-      scale: 0,
+      scale: 0.001,
       stagger: {
         each: 0.05,
         from: 'start',
