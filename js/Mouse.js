@@ -9,15 +9,7 @@ class Mouse {
 
   initialize() {
     this.position = this.game.randomPosition();
-    
-    this.element = document.createElement('div');
-    this.element.classList.add('mouse-wrapper');
-    this.element.innerHTML = `
-      <div class="mouse-wrapper__container">
-        <img class="mouse-wrapper__mouse" src="img/mouse.svg">
-        <div class="mouse-wrapper__portal"></div>
-      </div>
-    `;
+    this.element = document.querySelector('.mouse-wrapper');
   }
 
   spawn() {
@@ -44,7 +36,7 @@ class Mouse {
     }
 
     setTimeout(() => {
-      this.element.style.transform = `translate(${this.position.x}px, ${this.position.y}px)`;
+      this.element.style.transform = `translate(${this.position.x}px, ${this.position.y}px) translateZ(0)`;
       this.element.classList.add('mouse-wrapper--active');
     }, 400);
   }

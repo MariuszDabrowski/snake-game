@@ -5,7 +5,30 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <div id="board"></div>
+  <div id="board">
+    <div id="head">
+      <div class="head-container">
+        <svg class="snake-mouth" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 117.1 117.1" style="enable-background:new 0 0 117.1 117.1;" xml:space="preserve">
+          <circle class="snake-mouth__mouth-bottom" cx="58.5" cy="58.5" r="58.5"/>
+          <path class="snake-mouth__gums" d="M4.7,58.5C-1.5,42.6,21.6,4.7,58.5,4.7s60,37.9,53.8,53.8C102.9,82.9,14.1,82.9,4.7,58.5z"/>
+          <circle class="snake-mouth__tooth-left" cx="53.5" cy="10.7" r="3.9"/>
+          <circle class="snake-mouth__tooth-right" cx="63.5" cy="10.7" r="3.9"/>
+        </svg>
+        <svg class="snake-head" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 117.1 117.1" style="enable-background:new 0 0 117.1 117.1;" xml:space="preserve">
+          <circle class="snake-head__head" cx="58.5" cy="58.5" r="58.5"/>
+          <circle class="snake-head__eye-left" cx="39" cy="41.4" r="12.3"/>
+          <circle class="snake-head__pupil-left" cx="39" cy="37.4" r="3.2"/>
+          <circle class="snake-head__eye-right" cx="79" cy="41.4" r="12.3"/>
+          <circle class="snake-head__pupil-right" cx="79" cy="37.4" r="3.2"/>
+        </svg>
+      </div>
+    <div>
+
+    <div class="mouse-wrapper">
+      <img class="mouse-wrapper__mouse" src="img/mouse.svg">
+      <div class="mouse-wrapper__portal"></div>
+    </div>
+  </div>
 
   <script src='js/vendor/gsap.min.js'></script>
   <script src='js/Head.js'></script>

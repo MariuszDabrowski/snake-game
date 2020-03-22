@@ -41,8 +41,7 @@ class Body {
   
   moveNodes() {
     this.iterateNodes((node) => {
-      node.svg.style.transform = `rotate(${node.currentAngle}deg)`;
-      node.element.style.transform = `translate(${node.position.x}px, ${node.position.y}px)`;
+      node.element.style.transform = `translate(${node.position.x}px, ${node.position.y}px) translateZ(0)`;
       node.element.style.opacity = 1;
     });
   }
@@ -67,15 +66,9 @@ class Body {
     // Create a node and add it to the game board
     node.element = document.createElement('div');
     node.element.classList.add('snake-node');
-    node.element.style.transform = `translate(${node.position.x}px, ${node.position.y}px)`;
-    node.element.innerHTML = `
-      <svg class="snake-node__svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 117.1 117.1" style="enable-background:new 0 0 117.1 117.1;" xml:space="preserve">
-        <circle class="snake-node__svg__body" cx="58.5" cy="58.5" r="58.5"/>
-      </svg>
-    `;
+    node.element.style.transform = `translate(${node.position.x}px, ${node.position.y}px) translateZ(0)`;
     this.game.board.appendChild(node.element);
 
-    node.svg = node.element.querySelector('.snake-node__svg');
 
     if (!this.headNode) {
       this.headNode = node;

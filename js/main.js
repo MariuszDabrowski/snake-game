@@ -19,8 +19,6 @@ class Game {
   
   initialize() {
     this.addGameControls();
-
-    this.head.initialize();
     this.mouse.initialize();
     this.mouse.spawn();
     
