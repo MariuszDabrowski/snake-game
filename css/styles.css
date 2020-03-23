@@ -114,12 +114,12 @@ body {
 }
 
 .mouse-wrapper--active  .mouse-wrapper__mouse {
-  transform: translateX(-50%) translateY(-50px);
+  transform: translateX(-50%) translateY(-52px);
   transition: transform 0.4s 0.1s;
 }
 
 .mouse-wrapper__portal {
-  width: 48px;
+  width: 50px;
   height: 20px;
   background: #20271C;
   position: absolute;
